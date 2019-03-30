@@ -3,12 +3,14 @@
 
 function kingdom() {
   console.log("Hello from Kingdom");
+  let kingdomMessage = "Remember to pay your taxes";
 
   function westfall() {
-    console.log("Hello from westfall");
+    console.log("Hello from westfall and we received the kingdom message: %s", kingdomMessage);
+    let townMessage = "Remember to clean your carriages!";
 
     function greenfeld() {
-      console.log("Hello from greenfeld");
+      console.log("Hello from greenfeld and we received the kingdom message: %s, and the town message: %s", kingdomMessage, townMessage);
     }
 
     greenfeld();
@@ -16,7 +18,7 @@ function kingdom() {
   }
 
   function skyrim() {
-    console.log("Hello from skyrim");
+    console.log("Hello from skyrim and we received the kingdom message: %s", kingdomMessage);
 
     function orangeGrove() {
       console.log("Hello from Orange Grove");
@@ -42,10 +44,10 @@ const counter = () => {
   var counter = 0;
   return function () {counter += 1; return counter}
 };
-let newCounter = counter();
+let newerCounter = counter();
 // Example usage: const newCounter = counter();
-console.log(newCounter()); // 1
-console.log(newCounter()); // 2
+console.log(newerCounter()); // 1
+console.log(newerCounter()); // 2
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
@@ -53,16 +55,16 @@ const counterFactory = () => {
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
   var counter = 0;
-  return {increment: () => {
+  return {inc: () => {
     counter += 1;
     return counter;
-  }, decrement: () => {
+  }, dec: () => {
     counter -= 1;
     return counter;
   }};
 };
 
 let newCounterFactory = counterFactory();
-console.log(newCounterFactory.increment());
-console.log(newCounterFactory.increment());
-console.log(newCounterFactory.decrement());
+console.log(newCounterFactory.inc());
+console.log(newCounterFactory.inc());
+console.log(newCounterFactory.dec());
